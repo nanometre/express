@@ -6,9 +6,13 @@ const hbs = require('hbs');
 
 // tell express that we are using hbs as our view engine
 // a 'view engine' allows us to render HTML from template files
-// we can have variables in .hbs files.
 app.set('view engine', 'hbs');
 
+// express.static tells express where to find the static files
+// the argument is the name of the directory
+app.use(express.static('public'))
+
+// ROUTES
 app.get('/', function(req,res){
     res.render('index.hbs');
 })
@@ -17,7 +21,7 @@ app.get('/lucky', function(req,res){
     let lucky = Math.floor(Math.random() * 100 + 1);
     // when we send back a HBS file a the response,
     // `use res.render()`
-    res.render('lucky.hbs', {
+    res.render('lucky', {
         // the key is the object is the variable
         // name in the hbs file
         'luckyNumber': lucky
