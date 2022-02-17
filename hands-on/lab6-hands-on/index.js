@@ -80,7 +80,7 @@ app.post('/fruits', function(req, res){
     res.send("Total cost is $" + totalCost);
 })
 
-// HANDS ON C
+// HANDS ON C /////////////////////////////////////////
 app.get('/lost-and-found', function(req,res){
     res.render('lost-and-found.hbs')
 })
