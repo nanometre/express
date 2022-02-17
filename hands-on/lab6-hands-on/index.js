@@ -85,6 +85,37 @@ app.get('/lost-and-found', function(req,res){
     res.render('lost-and-found.hbs')
 })
 
+app.post('/lost-and-found', function(req, res){
+    let itemName = req.body.itemName;
+    let email = req.body.email;
+    let itemLeft = req.body.itemLeft;
+    let description = req.body.description || [];
+    description = Array.isArray(description) ? description : [description]
+
+    let hasError = false;
+    if (!itemName || !email || !itemLeft) {
+        hasError = true;
+    }
+
+    if (itemName.length <= 3 || itemName.length > 200) {
+        hasError = true;
+    }
+
+    if (!email.includes('@') || !email.includes('.')) {
+        hasError = true;
+    }
+
+    if (description == '' || description.length > 3) {
+        hasError = true;
+    }
+
+    if (hasError) {
+        res.sendStatus(406)
+    } else {
+        res.send('Success')
+    }
+})
+
 app.listen(3000, function(){
     console.log("Server has started")
 })

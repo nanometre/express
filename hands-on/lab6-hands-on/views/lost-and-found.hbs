@@ -2,8 +2,8 @@
 {{#block 'content'}}
 <form method="POST">
     <div>
-        <label>Name of Item:</label>
-        <input type="text" name="item-name" class="form-control" />
+        <label>Name of Item (Enter more than 3 and less than 200 characters):</label>
+        <input type="text" name="itemName" class="form-control" />
     </div>
 
     <div>
@@ -15,19 +15,24 @@
         <label>Where did you leave your item:</label>
         <div class='form-check form-check-inline'>
             <div class="ms-4 d-inline-block">
-                <input type="radio" class="form-check-input" name="item-left"
+                <input type="radio" class="form-check-input" name="itemLeft"
                    value="taxi" checked='checked'/>
                 <label class="form-check-label">Taxi</label>
             </div>
             <div class="ms-4 d-inline-block">
-                <input type="radio" class="form-check-input" name="item-left"
+                <input type="radio" class="form-check-input" name="itemLeft"
                    value="bus"/>
                 <label class="form-check-label">Bus</label>
             </div>
             <div class="ms-4 d-inline-block">
-                <input type="radio" class="form-check-input" name="item-left"
+                <input type="radio" class="form-check-input" name="itemLeft"
                   value="mrt"/>
                 <label class="form-check-label">MRT</label>
+            </div>
+            <div class="ms-4 d-inline-block">
+                <input type="radio" class="form-check-input" name="itemLeft"
+                  value="others"/>
+                <label class="form-check-label">Others</label>
             </div>
         </div>
     </div>
