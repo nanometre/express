@@ -1,0 +1,40 @@
+{{#extends 'base'}}
+
+{{#block 'title'}}Movies{{/block}}
+
+{{#block 'content'}}
+<a class='btn btn-primary btn-sm my-3' href="/movie/add">Add Movie</a>
+<div class="d-flex flex-wrap">
+{{#each movies}}
+<div class="card m-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.plot}}</p>
+        <p class="card-text">ID: {{this.id}}</p>
+        <a class='btn btn-primary btn-sm my-3' href="/movie/{{this.id}}/edit">Edit</a>
+        <a class='btn btn-danger btn-sm my-3'href="movie/{{this.id}}/delete">Delete</a>
+    </div>
+</div>
+{{/each}}
+</div>
+{{!-- <table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Plot</th>
+        </tr>
+    </thead>
+    {{#each movies}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.plot}}</td>
+            <td><a class='btn btn-primary btn-sm my-3' href="/movie/{{this.id}}/edit">Edit</a></td>
+            <td><a class='btn btn-danger btn-sm my-3'href="movie/{{this.id}}/delete">Delete</a></td>
+        </tr>
+    {{/each}}
+</table> --}}
+{{/block}}
+
+{{/extends}}
