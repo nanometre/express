@@ -19,7 +19,13 @@ Sightings
         <tr>
             <td>{{this._id}}</td> <!-- table column -->
             <td>{{this.description}}</td>
-            <td>{{this.food}}</td>
+            <td>
+                <ul>
+                {{#each this.food}}
+                    <li>{{this}}</li>
+                {{/each}}
+                </ul>
+            </td>
             <td>
                 <a href="/sightings/{{this._id}}/update" class="btn btn-primary btn-sm">Edit</a>
                 <a href="/sightings/{{this._id}}/delete" class="btn btn-danger btn-sm">Delete</a>
